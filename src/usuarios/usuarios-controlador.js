@@ -4,7 +4,7 @@ const { InvalidArgumentError, InternalServerError } = require('../erros');
 module.exports = {
   adiciona: async (req, res) => {
     const { nome, email, senha } = req.body;
-
+    
     try {
       const usuario = new Usuario({
         nome,

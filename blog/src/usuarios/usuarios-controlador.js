@@ -4,14 +4,14 @@ const { InvalidArgumentError, InternalServerError } = require('../erros');
 module.exports = {
   adiciona: async (req, res) => {
     const { nome, email, senha } = req.body;
-
+   
     try {
       const usuario = new Usuario({
         nome,
         email,
         senha
       });
-
+      console.log('a',nome);  
       await usuario.adiciona();
 
       res.status(201).json();

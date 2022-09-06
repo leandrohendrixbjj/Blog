@@ -6,12 +6,9 @@ module.exports = {
     const { nome, email, senha } = req.body;
     
     try {
-      const usuario = new Usuario({
-        nome,
-        email,
-        senha
-      });
+      const usuario = new Usuario({nome,email});
 
+      await usuario.addSenha(senha);
       await usuario.adiciona();
 
       res.status(201).json();

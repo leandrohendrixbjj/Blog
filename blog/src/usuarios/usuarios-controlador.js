@@ -10,8 +10,7 @@ module.exports = {
         nome,
         email,
         senha
-      });
-      console.log('a',nome);  
+      });      
       await usuario.adiciona();
 
       res.status(201).json();

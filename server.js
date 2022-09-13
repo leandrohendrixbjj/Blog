@@ -1,6 +1,10 @@
+
+console.clear();
+require('dotenv').config();
+
 const app = require('./app');
 const db = require('./database');
-const PORT = 3000;
+const PORT = process.env.PORT;
 const routes = require('./rotas');
 
 routes(app);

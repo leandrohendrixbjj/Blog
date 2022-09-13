@@ -50,6 +50,7 @@ function criarToken(usuario){
   const payload = {
     id: usuario.id
   };
-  const token = jwt.sign(payload, 'senha-secreta');
+    
+  const token = jwt.sign(payload, process.env.CHAVE_JWT);
   return token;
 }

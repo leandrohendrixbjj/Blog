@@ -53,7 +53,7 @@ module.exports = {
           WHERE email = ?
         `,
         [email],
-        (erro, usuario) => {
+        (erro, usuario) => {          
           if (erro) {
             return reject('Não foi possível encontrar o usuário!');
           }

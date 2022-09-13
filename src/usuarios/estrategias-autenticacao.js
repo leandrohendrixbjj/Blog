@@ -17,7 +17,6 @@ async function verificaSenha(senha, senhaHash) {
   }
 }
 
-console.log('after');
 passport.use(
   new LocalStrategy(
     {
@@ -38,5 +37,5 @@ passport.use(
     }
   )
 );
-console.log('bofore');
+
 

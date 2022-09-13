@@ -5,7 +5,7 @@ module.exports = {
     passport.authenticate(
       'local',
       { session: false },
-      (erro, usuario, info) => {        
+      (erro, usuario, info) => {                
         if (erro && erro.name === 'InvalidArgumentError') {
           return res.status(401).json({ erro: erro.message });
         }

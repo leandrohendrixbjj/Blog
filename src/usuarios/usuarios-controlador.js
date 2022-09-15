@@ -5,9 +5,9 @@ const jwt = require('jsonwebtoken');
 module.exports = {
   adiciona: async (req, res) => {
     const { nome, email, senha } = req.body;
-    
+
     try {
-      const usuario = new Usuario({nome,email});
+      const usuario = new Usuario({ nome, email });
 
       await usuario.addSenha(senha);
       await usuario.adiciona();
@@ -24,7 +24,7 @@ module.exports = {
     }
   },
 
-  login: (req,res) => {
+  login: (req, res) => {
     const token = criarToken(req.user);
     res.set('Authorization', token);
     res.status(204).end();
@@ -46,11 +46,11 @@ module.exports = {
   }
 };
 
-function criarToken(usuario){
+function criarToken(usuario) {
   const payload = {
     id: usuario.id
   };
-    
-  const token = jwt.sign(payload, process.env.CHAVE_JWT);
+
+  const token = jwt.sign(payload, process.env.CHAVE_JWT, { expiresIn: '15m' });
   return token;
 }

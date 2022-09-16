@@ -1,0 +1,3 @@
+Execute 
+  server: redis-server
+  client: redis-cli.exe

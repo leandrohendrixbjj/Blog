@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "e980a38f-4fbb-4853-bbea-82571128f391",
+		"_postman_id": "ac50c875-7bff-46e3-a26b-40aa22e03913",
 		"name": "Blog",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "5243657"
@@ -58,68 +58,6 @@
 							"port": "3000",
 							"path": [
 								"usuario"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Efetuar Login",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "aSE1gIFBKbBqlQmZOOTxrpgPKgQkgshbLnt1NS3w",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "email",
-								"value": "leandro@gmail.com",
-								"type": "text"
-							},
-							{
-								"key": "senha",
-								"value": "123123123",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"email\":\"leandro3@gmail.com\",\r\n    \"senha\": \"123123123\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/usuario/login",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"usuario",
-								"login"
-							],
-							"query": [
-								{
-									"key": "email",
-									"value": "leandro@gmail.com",
-									"disabled": true
-								},
-								{
-									"key": "senha",
-									"value": "123",
-									"disabled": true
-								}
 							]
 						}
 					},
@@ -245,6 +183,98 @@
 						"localhost"
 					],
 					"port": "3000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Efetuar Login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "aSE1gIFBKbBqlQmZOOTxrpgPKgQkgshbLnt1NS3w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "email",
+						"value": "leandro@gmail.com",
+						"type": "text"
+					},
+					{
+						"key": "senha",
+						"value": "123123123",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"leandro3@gmail.com\",\r\n    \"senha\": \"123123123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/usuario/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"usuario",
+						"login"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "leandro@gmail.com",
+							"disabled": true
+						},
+						{
+							"key": "senha",
+							"value": "123",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Efetuar Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNjYzNDIxNTE3LCJleHAiOjE2NjM0MjI0MTd9.d_Zjo5dwT5NPUpDe9dEbDQf-W-MxJF325V2qXaGTHz4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/usuario/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"usuario",
+						"logout"
+					]
 				}
 			},
 			"response": []

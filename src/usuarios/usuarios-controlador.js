@@ -1,6 +1,8 @@
 const Usuario = require('./usuarios-modelo');
 const { InvalidArgumentError, InternalServerError } = require('../erros');
 const jwt = require('jsonwebtoken');
+const blackList = require('../../redis/setBlackList.js');
+
 
 module.exports = {
   adiciona: async (req, res) => {
@@ -28,6 +30,17 @@ module.exports = {
     const token = criarToken(req.user);
     res.set('Authorization', token);
     res.status(204).end();
+  },
+
+  logout: async (req, res) => {
+    try {
+      const token = req.token;
+
+      await blackList.adiciona(token);
+      res.status(204).end();
+    } catch (err) {
+      res.status(500).json({ error: "Erro ao add black list" });
+    }
   },
 
   lista: async (req, res) => {
